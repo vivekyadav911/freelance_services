@@ -1,27 +1,25 @@
-'use client'
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { getCookie, setCookie } from '@/app/Utils/cookies'
-import ThemeToggle from './ThemeToggle'
+'use client';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { getCookie, setCookie } from '@/app/Utils/cookies';
+import ThemeToggle from './ThemeToggle';
 
-
-
-const STUDENT_NUMBER = "21973907" // Replace with your actual student number
+const STUDENT_NUMBER = "12345678"; // Replace with your actual student number
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [activeTab, setActiveTab] = useState('home')
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('home');
 
   useEffect(() => {
-    const savedTab = getCookie('activeTab')
-    if (savedTab) setActiveTab(savedTab)
-  }, [])
+    const savedTab = getCookie('activeTab');
+    if (savedTab) setActiveTab(savedTab);
+  }, []);
 
   const handleTabClick = (tab: string) => {
-    setActiveTab(tab)
-    setCookie('activeTab', tab, 30) // Save for 30 days
-    setIsMenuOpen(false)
-  }
+    setActiveTab(tab);
+    setCookie('activeTab', tab, 30); // Save for 30 days
+    setIsMenuOpen(false);
+  };
 
   const menuItems = [
     { name: 'Home', path: '/', key: 'home' },
@@ -29,7 +27,7 @@ export default function Header() {
     { name: 'Escape Room', path: '/escape-room', key: 'escape-room' },
     { name: 'Coding Races', path: '/coding-races', key: 'coding-races' },
     { name: 'Court Room', path: '/court-room', key: 'court-room' },
-  ]
+  ];
 
   return (
     <header className="bg-white dark:bg-gray-900 shadow-md">
@@ -60,7 +58,6 @@ export default function Header() {
 
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            
             {/* Hamburger Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -99,5 +96,5 @@ export default function Header() {
         )}
       </div>
     </header>
-  )
+  );
 }
