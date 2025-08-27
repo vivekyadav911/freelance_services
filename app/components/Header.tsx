@@ -1,10 +1,10 @@
 'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { getCookie, setCookie } from '@/utils/cookies'
-import ThemeToggle from './ThemeToggle'
+import { getCookie, setCookie } from '@/app/Utils/cookies'
+import ThemeToggle from '@/components/ThemeToggle'
 
-const STUDENT_NUMBER = "12345678" // Replace with your actual student number
+const STUDENT_NUMBER = "21973907" // Replace with your actual student number
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
