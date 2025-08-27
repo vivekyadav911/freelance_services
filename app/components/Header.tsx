@@ -2,7 +2,9 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { getCookie, setCookie } from '@/app/Utils/cookies'
-import ThemeToggle from '@/components/ThemeToggle'
+import ThemeToggle from './ThemeToggle'
+
+
 
 const STUDENT_NUMBER = "21973907" // Replace with your actual student number
 
